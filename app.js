@@ -1,6 +1,10 @@
 const express = require('express');
 const mysql = require('mysql');
 
+//https://stackabuse.com/node-js-express-examples-rendered-rest-and-static-websites/ // Gutes Beispiel
+//https://www.tutorialspoint.com/nodejs/nodejs_event_emitter.htm // Events
+
+
 //Create connectoin
 const db = mysql.createConnection({
     host: "localhost",

@@ -2,9 +2,10 @@
   "name": "node-tinder",
   "version": "1.0.0",
   "description": "Node based Backend for Wohnder",
-  "main": "main.js",
+  "main": "app.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {},
   "scripts": {
