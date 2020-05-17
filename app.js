@@ -7,13 +7,13 @@ const bodyParser = require('body-parser');
 //https://www.tutorialspoint.com/nodejs/nodejs_event_emitter.htm // Events
 // Vue.js https://vuejs.org/v2/guide/
 
-/*
+
 //Create connectoin
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password : "secret",
-    database: 'mysql'
+    host: "s224.goserver.host",
+    user: "web234",
+    password : "jsukj3jpLZCsVDE",
+    database: 'web234_db2'
 });
 db.connect((err) => {
     if(err){
@@ -21,7 +21,7 @@ db.connect((err) => {
     }
     console.log("Database connection established");
 })
-*/
+
 //EXCLUDE!
 
 const app = express();
@@ -44,14 +44,36 @@ app.get('/createdb', (req,res) => {
     })
 })
 
+//web234_db2.users
+/*
+id auto 
+full name varchar(45) not Null
+phone varchar(45) null
+email varchar(45) not Null
+gender varchar(1) null
+photos blob null
+age int(11) null
+
+*/
 app.get('/addUser', (req, res) => {
-    let data = {}
-    let sql = 'INSERT INTO db.User SET ?';
-    let query = db.query(sql,data, (err,result) => {
+    for(var i = 0; i < 30; i++){
+        var duude = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
+        let data = {
+            full_name: "duude"+duude,
+            email: duude+"@test.com",
+            gender: "m",
+            age: "67"
+        }
+        let sql = 'INSERT INTO db.User SET ?';
+        let query = db.query(sql,data, (err,result) => {
         if (err) throw err;
         console.log(result);
-        res.send('user added');
     });
+    res.send('users added');
+
+    }
+    
+    
 });
 
 /**
