@@ -56,7 +56,7 @@ age int(11) null
 
 */
 app.get('/addUser', (req, res) => {
-    for(var i = 0; i < 30; i++){
+    for(var i = 0; i < 60; i++){
         var duude = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
         let data = {
             full_name: "duude"+duude,
@@ -64,7 +64,7 @@ app.get('/addUser', (req, res) => {
             gender: "m",
             age: "67"
         }
-        let sql = 'INSERT INTO db.User SET ?';
+        let sql = 'INSERT INTO web234_db2.users SET ?';
         let query = db.query(sql,data, (err,result) => {
         if (err) throw err;
         console.log(result);
